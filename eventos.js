@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
-    var botones = document.getElementsByTagName("div");
-
-    for (var i = 0; i < botones.length; i++) {
-        botones[i].addEventListener("click", verAlerta);
+    var div = document.getElementsByTagName("div");
+    var boton = document.getElementsByTagName("button")
+    
+    for (var i = 0; i < div.length; i++) {
+        div[i].addEventListener("click", verAlerta);
     }
+
+    
+
+    for (var i = 0; i < boton.length; i++) {
+        boton[i].addEventListener("click", Alerta);
+    }
+
 });
 
 
 function verAlerta() {
     alert("Hola! Soy el div");
+}
+
+function Alerta() {
+    alert("Hola!");
+    event.stopPropagation();
 }
